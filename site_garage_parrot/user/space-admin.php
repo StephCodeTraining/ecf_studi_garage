@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="..\sytle-garage.css">
+     <!-- Font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
     <title>Espace Admin</title>
 </head>
 <body>
@@ -18,6 +22,7 @@
         <h1 class="col">Espace Administrateur</h1>
     </header>
     <main class="container">
+        <!--  ---------------------------------- Ajout Employer -->
         <h2>Ajout d'Employer</h2>
         <div>
             <form method="post" action=".\admin\actions\add_employer">
@@ -46,8 +51,8 @@
             <?php include '..\structure\main\horaires_garage.php' ?>
         </div>
          <!-- ---------------------------------------- Btn EDIT -->
-         <div class="row d-flex justify-content-center align-item-center">
-             <svg role="button" data-bs-toggle="modal" data-bs-target="#modif-horaires" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square text-dark text-center" viewBox="0 0 20 20">
+         <div class="row row-even mt-2">
+             <svg role="button" data-bs-toggle="modal" data-bs-target="#modif-horaires" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil-square text-dark text-center" viewBox="0 0 20 20">
                  <title>Modifier</title>
                  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
                  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>

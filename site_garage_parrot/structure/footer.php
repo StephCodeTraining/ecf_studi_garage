@@ -43,7 +43,9 @@
   </div>
   <!-- LOGO -->
   <div class="col-3 col-center">
-    <img class="img-logo" src=".\ressources\logo_garage.jpg" alt="logo">
+    <a href="#top">
+      <img class="img-logo" src=".\ressources\logo_garage.jpg" alt="logo">
+    </a>
   </div>
   <!-- Réseaux Sociaux -->
   <div class="col col-center">
@@ -187,21 +189,27 @@
               </textarea>
             </div>
             <h6>Note</h6>
-            <div class="form-group d-flex justify-content-between">
-              <label for="note"  >1</label>
-              <input id="note-1" name="note" value="1"type="radio">
-              
-              <label for="note"  >2</label>
-              <input id="note-2" name="note" value="2"type="radio">
-              
-              <label for="note"  >3</label>
+            <div class="row row-even">
+              <div class="form-group col">
+                <label for="note"  >1</label>
+                <input id="note-1" name="note" value="1"type="radio">
+              </div>
+              <div class="form-group col">
+                <label for="note"  >2</label>
+                <input id="note-2" name="note" value="2"type="radio">
+              </div>
+              <div class="form-group col">
+                <label for="note"  >3</label>
               <input id="note-3" name="note" value="3"type="radio">
-              
-              <label for="note"  >4</label>
-              <input id="note-4" name="note" value="4"type="radio">
-              
-              <label for="note"  >5</label>
-              <input id="note-5" name="note" value="5"type="radio">
+              </div>
+              <div class="form-group col">
+                <label for="note"  >4</label>
+                <input id="note-4" name="note" value="4"type="radio">
+              </div>
+              <div class="form-group col">
+                <label for="note"  >5</label>
+                <input id="note-5" name="note" value="5"type="radio">
+              </div>
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-outline-dark mt-2">Envoyer</button>

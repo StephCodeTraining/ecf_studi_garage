@@ -3,6 +3,7 @@
 }
 body {
   background: radial-gradient(white, grey);
+  font-family: "Teko", sans-serif;
 }
 /* ------------------------------ Class Flx */
 .row-even {
@@ -29,22 +30,36 @@ header {
 h1 {
   color: aliceblue;
   text-shadow: 1px 1px 2px black;
+  font-size: 40px;
 }
-.img-logo {
+.img-logo,
+.logo-occasion {
   width: 100%;
+  height: 100%;
   border-radius: 50%;
 }
-.logo-occasion {
-  height: 50vh;
-  width: 90%;
+a.navbar-brand,
+a.nav-link {
+  color: aliceblue;
 }
+a.navbar-brand:hover,
+a.nav-link:hover {
+  color: darkgrey;
+  text-shadow: 1px 1px 2px black;
+}
+
 /* ------------------ MAIN */
 /* ------------------ FOOTER */
 footer {
   background: radial-gradient(white, grey);
-  color: bisque;
+  color: aliceblue;
 }
 /* ------------------------------------------------- Elements */
+.img-services {
+  width: 100%;
+  border-radius: 30%;
+}
+
 p {
   max-width: 80%;
 }
@@ -59,10 +74,21 @@ td {
   text-align: center;
   margin: 2vw;
 }
-/* ------------------ SHADOWS */
+/* ------------------ SHADOWS & Display */
 form input.form-control,
-table {
+form textarea.form-control,
+table,
+.img-services {
   box-shadow: 2px 2px 2px darkgray, -2px -2px 2px darkgray;
+}
+.shadow-text {
+  text-shadow: 1px 1px 0px black, -1px -1px 0px black;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
 }
 /* ------------------ CARTES */
 .card-img-top,
@@ -84,14 +110,28 @@ table {
   height: 100%;
 }
 /* ------------------------------- MediaQuery */
-@media screen and (max-width: 550px) {
-  button.login {
-    font-size: 12px;
+@media screen and (max-width: 750px) {
+  button.login,
+  button.btn-outline-light,
+  td,
+  th,
+  h6,
+  p,
+  li {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 750px) {
   .carousel-inner {
     width: 50vw;
     height: 60vh;
+  }
+  button.login,
+  button.btn-outline-light,
+  td,
+  th h6,
+  p,
+  li {
+    font-size: 25px;
   }
 }

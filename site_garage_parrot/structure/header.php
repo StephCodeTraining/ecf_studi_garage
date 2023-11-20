@@ -1,8 +1,10 @@
 <div class="container-fluid row row-between">
-    <div class="col-3 col-center">
-        <img class="img-logo" src=".\ressources\logo_garage" alt="logo">
+    <div class="col-3 col-lg-1 p-2 col-center">
+        <a href=".\index_garage_v-parrot.php">
+            <img class="img-logo" src=".\ressources\logo_garage" alt="logo">
+        </a>
     </div>
-    <h1 class="col-3 col-center">Garage V.Parrot</h1>
+    <h1 id="top" class="col-3 col-center">Garage V.Parrot</h1>
     <!-- -------------------------------------- Btn Login -->
     <div class="col-3 col-center">
         <div>
@@ -14,7 +16,7 @@
             </button>
         </div>
     </div>
-    <!-- ---------------------- Modal Login -->
+    <!--  Modal Login -->
     <div class="modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="idTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -51,20 +53,14 @@
 <!-- -------------------------------------------------- Nav -->
 <nav class="navbar navbar-expand-sm ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Accueil</a>
+    <a class="navbar-brand" href=".\index_garage_v-parrot.php">Accueil</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Réparation</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Entretient</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Vehicules d'Occasion</a>
+          <a class="nav-link" href=".\occasions.php">Vehicules d'Occasion</a>
         </li>
       </ul>
     </div>

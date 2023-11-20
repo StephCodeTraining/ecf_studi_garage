@@ -1,51 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V.Parrot-Garage</title>
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href=".\sytle-garage.css">
-    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- ---------------------------------------------- HEADER -->
+    <!-- Header -->
     <header>
         <?php include '.\structure\header.php' ?>
     </header>
-    <!-- ---------------------------------------------- MAIN -->
+    <!-- Main -->
     <main class="container">
-        <section class="row row-even">
-            <?php include '.\structure\main\presentation_services.php' ?>
+        <!-- Vehicules d'occasions -->
+        <section class="m-2">
+            <h2>Vehicules d'occasions disponibles</h2>
+            <?php include '.\structure\main\index_occasions.php' ?>
         </section>
-        <!-- Slide Occasions -->
-        <section class="row row-even">
-            <?php include '.\structure\main\slide-occasions.php' ?>
-        </section>
-        <!-- Services -->
-        <section class="row row-even">
-            <?php include '.\structure\main\services.php' ?>
-        </section>
-        <!-- Horaires & Commentaires -->
-        <section class="row row-even p-1">
-            <div class="col-12 col-md-6 col-center">
-                <?php include '.\structure\main\horaires_garage.php'?>
-            </div>
-            <div class="col-12 col-md-5 ">
-                <?php include '.\structure\main\affichage_commentaires.php' ?>
-            </div>
+        <section class="m-2">
+        <?php include '.\structure\main\horaires_garage.php'?>
         </section>
     </main>
-    <!-- --------------------------------------------- FOOTER -->
+    <!-- FOOTER -->
     <footer class="container-fluid p-2">
         <?php include '.\structure\footer.php' ?>
     </footer>
-    <!-- script bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="horaires-change.js"></script>
+    <script src=".\structure\main\filtre-occasions.js"></script>
 </body>
 </html>

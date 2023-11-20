@@ -1,12 +1,8 @@
+<h3>Dernières Arrivées</h3>
 <div id="carouselOccasions" class="carousel slide col-center">
   <div class="carousel-inner ">
       <div class="carousel-item active ">
-        <div class="col-center">
-          <h6>Dernières Arrivées</h6>
-          <div class="col-center">
-            <img class="crsl-img logo-occasion" src=".\ressources\img_slide.jpg" alt="">
-          </div>
-        </div>
+          <img class="logo-occasion" src=".\ressources\logo_garage.jpg" alt="">
       </div>
 <?php 
   if($pdo = new PDO('mysql:dbname=garage_v_parrot;host=localhost','root','')) {
