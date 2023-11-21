@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\..\sytle-garage.css">
+     <!-- Font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <title>Espace Admin</title>
 
 </head>
 <body>
@@ -27,6 +33,8 @@ if($pdo->exec('CREATE DATABASE garage_v_parrot;') === false) {
 
 $pdo = new PDO('mysql:dbname=garage_v_parrot;host=localhost', 'root', '');
 
+$employer_exist = false;
+
 if($pdo->exec('CREATE TABLE employers (
     id INT(10) PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(20) ,
@@ -34,20 +42,30 @@ if($pdo->exec('CREATE TABLE employers (
     email VARCHAR(50) ,
     mdp VARCHAR(50) 
 )') !== false) {
-    echo 'Table créée';
+    echo 'Connexion réussie'. $br;
 } else  {
-    echo 'Table deja créée' . $br;
+    echo 'Connexion réussie' . $br;
+    foreach ($pdo->query('SELECT * FROM employers', PDO::FETCH_ASSOC) as $user) {
+        if ($user['email'] === $_POST['email']) {
+            $employer_exist = true;
+            echo 'L\'employé ' . $_POST['nom'] . ' est déjà enregistré ' .$br;
+        }
+    }
 }
 
-$new_employer = "INSERT INTO employers (
+if($employer_exist === false) {
+    
+    
+    $new_employer = "INSERT INTO employers (
     nom, prenom, email, mdp)
 VALUES ('" . $_POST["nom"] ."', '" .
         $_POST["prenom"] . "', '" .
         $_POST["email"] . "', '" .
         $_POST["mdp"] . "');";
-
-if($pdo->exec($new_employer) !== false) {
-        echo 'Ajout de l\'employer ' .$_POST['nom'] . ' effectué' . $br ;
+        
+        if($pdo->exec($new_employer) !== false) {
+            echo 'Ajout de l\'employer ' .$_POST['nom'] . ' effectué' . $br ;
+        }
     }
 ?>
 

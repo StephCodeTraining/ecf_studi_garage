@@ -12,7 +12,7 @@ $pdo = new PDO('mysql:dbname=garage_v_parrot;host=localhost', 'root', '');
             $is_employer = true;
         } else if($_POST['login-email'] === $user['email'] 
         && $_POST['login-mdp'] === $user['mdp']
-        && $user['admin'] === "0") {
+        && $user['admin'] === null) {
             include 'space_employer.php';
             $is_employer = true;
         }  

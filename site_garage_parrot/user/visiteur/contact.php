@@ -31,9 +31,9 @@
     email VARCHAR(100) ,
     message VARCHAR(250)
 )') !== false) {
-    echo 'Table créée';
+    echo 'Connexion réussie';
 } else  {
-    echo 'Table deja créée' . $br;
+    echo 'Connexion réussie' . $br;
 }
 // Ajout du contact / message
 $new_contact = "INSERT INTO contacts (

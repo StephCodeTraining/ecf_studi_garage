@@ -30,9 +30,9 @@ if($pdo->exec('CREATE TABLE commentaires (
     note INT(1),
     valid BOOLEAN
 )') !== false) {
-    echo 'Table créée';
+    echo 'Connexion réussie';
 } else  {
-    echo 'Table deja créée' . $br;
+    echo 'Connexion réussie ' . $br;
 }
 
 $nouveau_commentaire = "INSERT INTO commentaires (

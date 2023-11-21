@@ -45,7 +45,7 @@
             prenom VARCHAR(20) ,
             email VARCHAR(50) ,
             mdp VARCHAR(50),
-            admin BOOLEAN
+            admin BOOLEAN DEFAULT false
                 )') !== false) {
                     echo 'Table employers créée' .$br;
                 } else  {

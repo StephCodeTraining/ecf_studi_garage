@@ -27,9 +27,9 @@
                 kilometrage INT(10),
                 img VARCHAR(250)
             )') !== false) {
-                echo 'Table créée';
+                echo 'Connexion réussie' . $br;
             } else  {
-                echo 'Table deja créée' . $br;
+                echo 'Connexion réussie' . $br;
             }
             
             $new_car = "INSERT INTO voitures (
