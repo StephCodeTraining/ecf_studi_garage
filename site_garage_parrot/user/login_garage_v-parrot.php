@@ -1,15 +1,24 @@
 <?php 
 
+$is_employer = false;
+
 $pdo = new PDO('mysql:dbname=garage_v_parrot;host=localhost', 'root', '');
 
-if ($_POST['login-email'] === 'steph.codetraining@yahoo.com' && $_POST['login-mdp'] === 'mdp') {
-    include '.\space-admin.php';
-} else {
-    foreach ($pdo->query('SELECT email, mdp FROM employers', PDO::FETCH_ASSOC) as $key => $value) {
-        if($_POST['login-email'] === $value['email'] && $_POST['login-mdp'] === $value['mdp']) {
+    foreach ($pdo->query('SELECT * FROM employers', PDO::FETCH_ASSOC) as $user) {
+        if ($_POST['login-email'] === $user['email']
+        && $_POST['login-mdp'] === $user['mdp']
+        && $user['admin'] === "1") {
+            include '.\space-admin.php';
+            $is_employer = true;
+        } else if($_POST['login-email'] === $user['email'] 
+        && $_POST['login-mdp'] === $user['mdp']
+        && $user['admin'] === "0") {
             include 'space_employer.php';
-        } else {
-            echo 'Cet accès est réservé au personel de l\'entreprise .. ' ;
-        }
+            $is_employer = true;
+        }  
     }
-}
+    if ($is_employer === false)
+    {
+        include '.\login_failed.php';
+    }
+

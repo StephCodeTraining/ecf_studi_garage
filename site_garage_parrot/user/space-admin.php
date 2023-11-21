@@ -21,17 +21,18 @@
         </div>
         <h1 class="col">Espace Administrateur</h1>
     </header>
-    <main class="container">
-        <!--  ---------------------------------- Ajout Employer -->
-        <h2>Ajout d'Employer</h2>
-        <div>
-            <form method="post" action=".\admin\actions\add_employer">
-                <div class="form-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" class="form-control" > 
-                </div>
-                <div class="form-group">
-                    <label for="prenom">Prénom</label>
+    <main class="container mb-4">
+        <!--  --------------------------- Ajout Employer -->
+        <section class="row row-even">
+            <h2>Ajout d'Employer :</h2>
+            <div class=" col-center">
+                <form method="post" action=".\admin\actions\add_employer" class="col-8">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" class="form-control" > 
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
                     <input type="text" id="prenom" name="prenom" class="form-control" > 
                 </div>
                 <div class="form-group">
@@ -46,75 +47,78 @@
                     <button class="btn btn-sm btn-outline-dark mt-2" type="submit">Ajouter</button>
                 </div>
             </form>
-        </div>
-        <div >
-            <?php include '..\structure\main\horaires_garage.php' ?>
-        </div>
-         <!-- ---------------------------------------- Btn EDIT -->
-         <div class="row row-even mt-2">
-             <svg role="button" data-bs-toggle="modal" data-bs-target="#modif-horaires" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil-square text-dark text-center" viewBox="0 0 20 20">
-                 <title>Modifier</title>
-                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
-                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
-                </svg>
-                <!-- ------------------------------------- Modal Modif Horaires -->
-                <div class="modal" id="modif-horaires" tabindex="-1" role="dialog" aria-labelledby="idTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4>Modifier les horaires</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                <div class="modal-body">
-                    <!-- Formulaire -->
-                    <form class="container-fluid row" method="post" action=".\admin\actions\change_horaires.php">
-                        <div class="col-4">
-                        <select name="jour-semaine" id="jour-semaine">
-                            <option value="lundi">Lundi</option>
-                            <option value="mardi">Mardi</option>
-                            <option value="mercredi">Mercredi</option>
-                            <option value="jeudi">Jeudi</option>
-                            <option value="vendredi">Vendredi</option>
-                            <option value="samedi">Samedi</option>
-                            <option value="dimanche">Dimanche</option>
-                        </select>
-                        </div>
-                        <div class="col">
-                            <div class="form-check">
-                                <input name="periode" value="matin" id="matin" type="radio">
-                                <label for="matin">Matin</label>
-                            </div>
-                            <div class="form-check">
-                                <input name="periode" value="apres_midi" id="apresMidi" type="radio">
-                                <label for="apres-midi">Apres-midi</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-check">
-                                <input name="limite" value="ouverture" id="ouverture" type="radio">
-                                <label for="ouverture">Ouverture</label>
-                            </div>
-                            <div class="form-check">
-                                <input name="limite" value="fermeture" id="fermeture" type="radio">
-                                <label for="fermeture">Fermeture</label>
-                            </div>
-                        </div>
-                        <div class="form-group col-12 d-flex justify-content-between">
-                            <label for="nouvel-horaire">Nouvel heure <br> (HH:mm)</label>
-                            <input name="nouvel-horaire" id="nouvel-horaire" type="text">
-                        </div>
-                        <button type="submit">Valider</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" onclick="changeHoraires()">Modifier</button>
-                    <button attr data-bs-dismiss="modal">Fermer</button>
-                </div>
             </div>
-        </div>
-    </div>
-</div>
-</main>
+        </section>
+        <!-- -------------------------- Horaires -->
+        <section class="row row-even">
+            <div class=" col-8" >
+                <?php include '..\structure\main\horaires_garage.php' ?>
+            </div>
+            <!-- --------------------------------- Btn EDIT -->
+            <div class="row row-even mt-2">
+                <svg role="button" data-bs-toggle="modal" data-bs-target="#modif-horaires" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil-square text-dark text-center" viewBox="0 0 20 20">
+                    <title>Modifier</title>
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+                   </svg>
+                   <!-- ------------------------------------- Modal Modif Horaires -->
+                   <div class="modal" id="modif-horaires" tabindex="-1" role="dialog" aria-labelledby="idTitle" aria-hidden="true">
+                       <div class="modal-dialog modal-dialog-centered" role="document">
+                           <div class="modal-content">
+                               <div class="modal-header">
+                                   <h4>Modifier les horaires</h4>
+                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                               </div>
+                   <div class="modal-body">
+                       <!-- Formulaire -->
+                       <form class="container-fluid row" method="post" action=".\admin\actions\change_horaires.php">
+                           <div class="col-4">
+                           <select name="jour-semaine" id="jour-semaine">
+                               <option value="lundi">Lundi</option>
+                               <option value="mardi">Mardi</option>
+                               <option value="mercredi">Mercredi</option>
+                               <option value="jeudi">Jeudi</option>
+                               <option value="vendredi">Vendredi</option>
+                               <option value="samedi">Samedi</option>
+                               <option value="dimanche">Dimanche</option>
+                           </select>
+                           </div>
+                           <div class="col">
+                               <div class="form-check">
+                                   <input name="periode" value="matin" id="matin" type="radio">
+                                   <label for="matin">Matin</label>
+                               </div>
+                               <div class="form-check">
+                                   <input name="periode" value="apres_midi" id="apresMidi" type="radio">
+                                   <label for="apres-midi">Apres-midi</label>
+                               </div>
+                           </div>
+                           <div class="col">
+                               <div class="form-check">
+                                   <input name="limite" value="ouverture" id="ouverture" type="radio">
+                                   <label for="ouverture">Ouverture</label>
+                               </div>
+                               <div class="form-check">
+                                   <input name="limite" value="fermeture" id="fermeture" type="radio">
+                                   <label for="fermeture">Fermeture</label>
+                               </div>
+                           </div>
+                           <div class="form-group col-12 d-flex justify-content-between">
+                               <label for="nouvel-horaire">Nouvel heure <br> (HH:mm)</label>
+                               <input name="nouvel-horaire" id="nouvel-horaire" type="text">
+                           </div>
+                           <button type="submit">Valider</button>
+                       </form>
+                   </div>
+                   <div class="modal-footer">
+                       <button type="button" onclick="changeHoraires()">Modifier</button>
+                       <button attr data-bs-dismiss="modal">Fermer</button>
+                   </div>
+               </div>
+           </div>
+        </section>
+        
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script src="horaires-change.js"></script>
 

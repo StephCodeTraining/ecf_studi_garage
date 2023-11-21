@@ -115,7 +115,7 @@
           <div class="modal-body">
             <p>Vous pouvez nous poser vos questions concernant nos services, nous mettrons tout en oeuvres pour vous répondre dans les meilleurs délais</p>
             <!-- Formulaire -->
-            <form method="post" action=".\login\user\actions\contact.php">
+            <form method="post" action=".\user\visiteur\contact.php">
               <div class="form-group">
                 <label for="contact_nom">Nom</label>
                 <input class="form-control" name="contact_nom" id="contact_nom" type="text">
